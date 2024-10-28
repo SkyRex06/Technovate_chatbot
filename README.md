@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Project</title>
+    #Chatbot Project
 </head>
 <body>
 
@@ -79,6 +79,145 @@
     <li>Commit your changes and push to your branch.</li>
     <li>Submit a pull request for review.</li>
 </ol>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Project Setup Guide</title>
+</head>
+<body>
+
+<h1>Chatbot Project Setup Guide</h1>
+
+<p>This guide will walk you through setting up and building the chatbot project from scratch.</p>
+
+<h2>Step 1: Set Up the Project Environment</h2>
+<ol>
+    <li><strong>Install Python (3.8 or later):</strong> Ensure Python is installed. <a href="https://www.python.org/downloads/" target="_blank">Download Python</a> if necessary.</li>
+    <li><strong>Create a Virtual Environment:</strong> Open your terminal or command prompt and run the following command:
+        <pre><code>python -m venv chatbot-env</code></pre>
+        This will create an isolated environment for the project.
+    </li>
+    <li><strong>Activate the Virtual Environment:</strong> Use the command appropriate for your OS:
+        <ul>
+            <li>For Windows:
+                <pre><code>chatbot-env\Scripts\activate</code></pre>
+            </li>
+            <li>For macOS/Linux:
+                <pre><code>source chatbot-env/bin/activate</code></pre>
+            </li>
+        </ul>
+    </li>
+</ol>
+
+<h2>Step 2: Install Dependencies</h2>
+<p>Create a <code>requirements.txt</code> file to list the necessary libraries, such as Flask or any chatbot-specific libraries you plan to use.</p>
+<pre><code>touch requirements.txt</code></pre>
+<p>Add the following lines to <code>requirements.txt</code>:</p>
+<pre><code>flask
+requests
+</code></pre>
+<p>Then, install the dependencies with:</p>
+<pre><code>pip install -r requirements.txt</code></pre>
+
+<h2>Step 3: Build the Core Chatbot Script</h2>
+<ol>
+    <li>Create a main script file named <code>chatbot.py</code>:</li>
+    <pre><code>touch chatbot.py</code></pre>
+    <li>In <code>chatbot.py</code>, write the basic structure to handle user inputs. Here’s an example:
+        <pre><code>python
+def chatbot_response(user_input):
+    if "weather" in user_input:
+        return "Fetching weather details..."
+    elif "calculate" in user_input:
+        return "Solving the expression..."
+    else:
+        return "I'm here to help!"
+</code></pre>
+    </li>
+</ol>
+
+<h2>Step 4: Add Specific Task Modules</h2>
+<ol>
+    <li>Create a folder named <code>commands</code> for task-specific modules:</li>
+    <pre><code>mkdir commands</code></pre>
+    <li>Add individual Python files for each task, such as <code>command_weather.py</code> and <code>command_calculator.py</code>.</li>
+    <li>In each file, define functions to handle specific tasks. Example:
+        <pre><code>python
+# command_weather.py
+def get_weather(location):
+    # Code to fetch weather information
+    return "Weather for " + location
+</code></pre>
+    </li>
+</ol>
+
+<h2>Step 5: Connect the Modules to the Main Chatbot</h2>
+<ol>
+    <li>In <code>chatbot.py</code>, import the task modules you created in Step 4.</li>
+    <li>Update the <code>chatbot_response</code> function to use the specific task functions based on user input:
+        <pre><code>python
+from commands.command_weather import get_weather
+
+def chatbot_response(user_input):
+    if "weather" in user_input:
+        location = user_input.split("in")[-1].strip()
+        return get_weather(location)
+    # Add more conditions for other tasks here
+</code></pre>
+    </li>
+</ol>
+
+<h2>Step 6: Test the Chatbot</h2>
+<p>Run the chatbot in your terminal:</p>
+<pre><code>python chatbot.py</code></pre>
+<p>Interact with the chatbot by typing commands, like asking for weather information or calculations.</p>
+
+<h2>Step 7: Optional - Set Up a Simple Web Interface with Flask</h2>
+<ol>
+    <li>In <code>chatbot.py</code>, add Flask to enable web-based interaction:</li>
+    <pre><code>python
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_input = request.json.get("message")
+    response = chatbot_response(user_input)
+    return jsonify({"response": response})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+    </li>
+    <li>Run the Flask app and use a tool like Postman to test requests.</li>
+</ol>
+
+<h2>Step 8: Push the Project to GitHub</h2>
+<ol>
+    <li>Initialize a Git repository:
+        <pre><code>git init</code></pre>
+    </li>
+    <li>Add all files and commit changes:
+        <pre><code>git add .
+git commit -m "Initial commit"</code></pre>
+    </li>
+    <li>Push to GitHub:
+        <pre><code>git remote add origin https://github.com/yourusername/chatbot-project.git
+git push -u origin main</code></pre>
+    </li>
+</ol>
+
+<h2>Project Complete</h2>
+<p>Congratulations! Your chatbot project is now set up and running. You can expand it by adding more modules and features as needed.</p>
+
+</body>
+</html>
+
 
 <h2 id="license">License</h2>
 <p>This project is licensed under the MIT License. See <code>LICENSE</code> for more details.</p>
