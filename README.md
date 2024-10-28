@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    #Chatbot Project
+    <h1>Chat Bot - Technovate </h1>
+    <p>It is the chatbot I created with the help of club AI Renaissance I am a part of which helped me in lots of ways in a tech event which was Technovate so I named it after the event</p>
 </head>
 <body>
 
