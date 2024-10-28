@@ -40,7 +40,7 @@
 <h2 id="installation">Installation</h2>
 <ol>
     <li>Clone this repository:</li>
-    <pre><code>git clone https://github.com/yourusername/chatbot-project.git</code></pre>
+    <pre><code>git clone https://github.com/yourusername/Technovate_chatbot.git</code></pre>
     <li>Navigate to the project directory:</li>
     <pre><code>cd chatbot-project</code></pre>
     <li>Install the dependencies:</li>
