@@ -48,22 +48,6 @@
     <pre><code>pip install -r requirements.txt</code></pre>
 </ol>
 
-<h2 id="usage">Usage</h2>
-<ol>
-    <li>Start the chatbot:</li>
-    <pre><code>python chatbot.py</code></pre>
-    <li>Interact with the chatbot by typing commands. The chatbot will perform tasks based on the input and provide responses accordingly.</li>
-</ol>
-
-<h2 id="structure">Project Structure</h2>
-<ul>
-    <li><code>chatbot.py</code> - The main file that runs the chatbot and manages user interactions.</li>
-    <li><code>commands/</code> - Contains modules for handling specific tasks (e.g., <code>command_math.py</code>, <code>command_weather.py</code>).</li>
-    <li><code>utils/</code> - Utility functions for formatting responses, parsing commands, etc.</li>
-    <li><code>requirements.txt</code> - Lists dependencies required to run the chatbot.</li>
-</ul>
-
-<h2 id="sample-commands">Sample Commands</h2>
 <p>Below are some example commands that the chatbot can handle:</p>
 <ul>
     <li><strong>Weather Lookup:</strong> <code>weather in [location]</code> - Provides the current weather for a given location.</li>
@@ -81,10 +65,6 @@
     <li>Submit a pull request for review.</li>
 </ol>
 
-
-
-<h2 id="license">License</h2>
-<p>This project is licensed under the MIT License. See <code>LICENSE</code> for more details.</p>
 
 </body>
 </html>
