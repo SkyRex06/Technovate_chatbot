@@ -24,6 +24,7 @@
     <li><a href="#license">License</a></li>
 </ul>
 
+<h1>Interface of Project</h1>
 <img src="1.jpeg" alt="Image 1 Description" width="500">
 <img src="2.jpeg" alt="Image 2 Description" width="500">
 
