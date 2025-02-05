@@ -24,6 +24,9 @@
     <li><a href="#license">License</a></li>
 </ul>
 
+<img src="Downloads/1.jpeg" alt="Image 1 Description" width="500">
+<img src="Downloads/2.jpeg" alt="Image 2 Description" width="500">
+
 <h2 id="features">Features</h2>
 <ul>
     <li>Automated task execution based on user commands.</li>
